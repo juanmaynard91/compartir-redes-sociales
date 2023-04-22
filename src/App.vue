@@ -82,9 +82,9 @@ let lastScrollTop = 0;
 const compartir = () => {
   if (navigator.share) {
     navigator.share({
-      text: "mi portfolio",
+      text: "gracias por ver pa :D",
       url: "https://juanmaynard91.github.io/portfolio/html/indexES.html",
-      title : "compartir proyectito",
+      title : "compartir en redes sociales",
     })
   }
   else {
