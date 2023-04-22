@@ -82,8 +82,8 @@ let lastScrollTop = 0;
 const compartir = () => {
   if (navigator.share) {
     navigator.share({
-      text: "mira las redes sociales pa",
-      url: "https://www.youtube.com/learnvue",
+      text: "mi portfolio",
+      url: "https://juanmaynard91.github.io/portfolio/html/indexES.html",
       title : "compartir proyectito",
     })
   }

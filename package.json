@@ -5,19 +5,21 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "bootstrap": "5.2.3",
     "primeicons": "^6.0.1",
-    "primevue": "^3.26.1",
+    "primevue": "^3.27.0",
     "vue": "3.2.47"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
     "cssnano": "^6.0.0",
+    "gh-pages": "^5.0.0",
     "rollup-plugin-terser": "^7.0.2",
-    "terser": "^5.16.9",
-    "vite": "4.2.1"
+    "terser": "^5.17.1",
+    "vite": "4.3.1"
   }
 }
