@@ -7,18 +7,18 @@
     <h1>{{ saludito }}</h1>
 
     <h1 :class="cambiarColorNumero">{{ numero }}</h1>
-    <button class="btn btn-primary" @click="aumentar()">aumentar</button>
-    <button class="btn btn-primary" @click="disminuir()">disminuir</button>
-    <button class="btn btn-primary" @click="resetear()">resetear</button>
+    <div class="separar-botones">
+      <button id="btn" @click="aumentar()">aumentar</button>
+      <button id="btn" @click="disminuir()">disminuir</button>
+      <button id="btn" @click="resetear()">resetear</button>
+    </div>
 
-    <button v-if="mostrarMic" class="btn btn-primary" @click="activandoMicrofono">mic</button>
+    <button v-if="mostrarMic" id="btn" @click="activandoMicrofono">mic</button>
     <h2>{{ microfono }}</h2>
 
-    <input type="text" class="input-moderno" placeholder="ingrese texto.." />
-
     <div>
-      <a href="https://www.linkedin.com/in/juan-maynard/" aria-label="mi link de linkedin" target="_blank"  toggle="tooltip"  title="linkedin"><i class="bi bi-linkedin"></i></a>
-      <a href="https://github.com/juanmaynard91" aria-label="mi link de github"  target="_blank" toggle="tooltip"  title="github"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/juan-maynard/" aria-label="mi link de linkedin" target="_blank" toggle="tooltip" title="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="https://github.com/juanmaynard91" aria-label="mi link de github" target="_blank" toggle="tooltip" title="github"><i class="bi bi-github"></i></a>
     </div>
 
     <div class="contenedora">
@@ -29,40 +29,34 @@
     </div>
 
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, doloribus
-      eos laborum ab cum eum fugit porro ipsum ex nihil. Sunt modi in quia quo
-      obcaecati. Qui similique provident nesciunt. Lorem ipsum dolor sit amet
-      consectetur adipisicing elit. Eius, doloribus eos laborum ab cum eum fugit
-      porro ipsum ex nihil. Sunt modi in quia quo obcaecati. Qui similique
-      provident nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Eius, doloribus eos laborum ab cum eum fugit porro ipsum ex nihil.
-      Sunt modi in quia quo obcaecati. Qui similique provident nesciunt. Lorem
-      ipsum dolor sit amet consectetur adipisicing elit. Eius, doloribus eos
-      laborum ab cum eum fugit porro ipsum ex nihil. Sunt modi in quia quo
-      obcaecati. Qui similique provident nesciunt. Lorem ipsum dolor sit amet
-      consectetur adipisicing elit. Eius, doloribus eos laborum ab cum eum fugit
-      porro ipsum ex nihil. Sunt modi in quia quo obcaecati. Qui similique
-      provident nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Eius, doloribus eos laborum ab cum eum fugit porro ipsum ex nihil.
-      Sunt modi in quia quo obcaecati. Qui similique provident nesciunt. Lorem
-      ipsum dolor sit amet consectetur adipisicing elit. Eius, doloribus eos
-      laborum ab cum eum fugit porro ipsum ex nihil. Sunt modi in quia quo
-      obcaecati. Qui similique provident nesciunt. Lorem ipsum dolor sit amet
-      consectetur adipisicing elit. Eius, doloribus eos laborum ab cum eum fugit
-      porro ipsum ex nihil. Sunt modi in quia quo obcaecati. Qui similique
-      provident nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Eius, doloribus eos laborum ab cum eum fugit porro ipsum ex nihil.
-      Sunt modi in quia quo obcaecati. Qui similique provident nesciunt. Lorem
-      ipsum dolor sit amet consectetur adipisicing elit. Eius, doloribus eos
-      laborum ab cum eum fugit porro ipsum ex nihil. Sunt modi in quia quo
-      obcaecati. Qui similique provident nesciunt.
+      El desarrollo frontend se refiere a la creación y diseño de la interfaz de
+      usuario de un sitio web o aplicación. Es la parte del desarrollo web que
+      se enfoca en lo que el usuario ve y con lo que interactúa, como los
+      botones, menús, formularios y demás elementos visuales. El trabajo del
+      desarrollador frontend implica utilizar lenguajes de programación como
+      HTML, CSS y JavaScript para crear diseños atractivos, funcionales y
+      responsivos que funcionen en diferentes dispositivos y navegadores.
+      También es importante tener en cuenta las mejores prácticas de
+      accesibilidad, usabilidad y rendimiento para garantizar una experiencia de
+      usuario óptima. Además de la creación de la interfaz de usuario, el
+      desarrollador frontend también trabaja en la integración de elementos
+      dinámicos y funcionales, como animaciones, efectos de transición y
+      funcionalidades interactivas como formularios y botones. También puede
+      trabajar en la integración de librerías y frameworks, como React o
+      Angular, para simplificar el proceso de desarrollo y mejorar la calidad
+      del código. En resumen, el desarrollo frontend es una parte esencial del
+      desarrollo web y de aplicaciones, ya que es responsable de crear la
+      experiencia de usuario y la apariencia visual del producto final. El
+      trabajo del desarrollador frontend requiere habilidades técnicas y
+      creativas para diseñar y desarrollar soluciones innovadoras que satisfagan
+      las necesidades de los usuarios.
     </p>
 
     <button ref="scrollToBottomBtn" class="button" @click="scrollToBottom">
       <i class="bi bi-arrow-down"></i>
     </button>
 
-    <button class="btn btn-primary" @click="compartir">Compartir en las redes papu</button>
+    <button id="btn" @click="compartir"><i class="bi bi-share-fill"></i> Compartir</button>
   </div>
 </template>
 
@@ -79,18 +73,18 @@ const mostrarMic = ref(true);
 const scrollToBottomBtn = ref(null);
 let lastScrollTop = 0;
 
+//compartir en las redes sociales
 const compartir = () => {
   if (navigator.share) {
     navigator.share({
-      text: "gracias por ver pa :D",
+      title: "compartir en redes sociales",
+      text: "gracias por compartir pa :D",
       url: "https://juanmaynard91.github.io/portfolio/html/indexES.html",
-      title : "compartir en redes sociales",
-    })
+    });
+  } else {
+    navigator.clipboard.writeText("link copiado!");
   }
-  else {
-    navigator.clipboard.writeText("link copiado!")
-  }
-}
+};
 
 //baja hasta el fondo de la pagina
 const scrollToBottom = () => {
@@ -192,22 +186,6 @@ onMounted(() => {
 }
 .item2 {
   align-self: stretch;
-}
-
-/* color al placeholder padre */
-.input-moderno,
-input::placeholder {
-  border: none;
-  border-bottom: 1px solid #bdbdbd;
-  outline: none;
-  background-color: transparent;
-  color: #fff;
-  margin: 2rem 0;
-}
-
-.input-moderno:focus {
-  border-bottom: 1px solid #5f5f5f;
-  outline: none;
 }
 
 .btn {

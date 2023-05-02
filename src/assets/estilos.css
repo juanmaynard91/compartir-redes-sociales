@@ -1,35 +1,40 @@
-/* buscar tipo de letra ubuntu */
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital@0;1&display=swap");
-
 * {
+  border: none;
+  list-style: none;
+  outline: none;
   padding: 0;
+  text-decoration: none;
   margin: 0;
 }
 
 html,
 body {
-  /*-webkit-animation: color-change-2x 2s linear infinite alternate both;
-  animation: color-change-2x 2s linear infinite alternate both;*/
-  background: blue;
+  -webkit-animation: color-change-2x 2s linear infinite alternate both;
+  animation: color-change-2x 2s linear infinite alternate both;
   color: #fff;
-  font-family: "Ubuntu", sans-serif;
+  font-family: Arial, sans-serif;
   scroll-behavior: smooth;
 }
 @-webkit-keyframes color-change-2x {
   0% {
-    background: #19dcea;
+    background: #303030;
   }
   100% {
-    background: #b22cff;
+    background: #202020;
   }
 }
 @keyframes color-change-2x {
   0% {
-    background: #19dcea;
+    background: #303030;
   }
   100% {
-    background: #b22cff;
+    background: #202020;
   }
+}
+
+p {
+  -moz-columns: auto 30rem;
+  columns: auto 30rem;
 }
 
 .red {
@@ -51,6 +56,7 @@ body {
   top: 0;
 }
 
+/*animaciones letras*/
 .tracking-in-expand {
   -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
     both;
@@ -79,4 +85,38 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+/*estilo botones*/
+button {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  background: transparent;
+  border-radius: 8px;
+  border: 1px solid #ffffff80;
+  box-shadow: transparent;
+  color: #ffffff80;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 10px 20px;
+  text-shadow: none;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+#btn:hover,
+:focus {
+  background: #008cff;
+  border: 1px solid #008cff;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
+    0 0 100px #008cff;
+}
+
+.separar-botones {
+  display: flex;
+  justify-content: space-around;
 }

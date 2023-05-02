@@ -3,7 +3,7 @@
   <h1>el props : {{ nombre }}</h1>
 
   <!--icono bootstrap-->
-  <button class="btn btn-primary" @click="enviarMensaje"><i class="bi bi-windows"></i> Enviar emit</button>
+  <button id="btn" @click="enviarMensaje"><i class="bi bi-windows"></i> Enviar emit</button>
 </template>
 
 <script>
@@ -26,6 +26,9 @@ export default {
 </script>
 
 <style>
+@import "../assets/estilos.css";
+
+/*animacion texto*/
 .text-focus-in {
   -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
